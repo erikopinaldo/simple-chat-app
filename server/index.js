@@ -14,6 +14,8 @@ import deleteRouter from "./routes/delete.js";
 // middleware
 import { decode } from './middlewares/jwt.js'
 
+const app = express();
+
 const port = process.env.PORT || '8000'
 
 app.use(logger("dev"));
