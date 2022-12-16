@@ -2,6 +2,9 @@ import express from 'express';
 import logger from "morgan";
 import cors from "cors";
 
+// mongo connection
+import "./config/mongo.js";
+
 // routes
 import indexRouter from "./routes/index.js";
 import userRouter from "./routes/user.js";
