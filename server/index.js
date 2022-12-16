@@ -1,3 +1,6 @@
+import * as dotenv from 'dotenv'
+dotenv.config()
+
 import express from 'express';
 import logger from "morgan";
 import cors from "cors";
