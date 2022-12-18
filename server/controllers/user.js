@@ -6,7 +6,14 @@ import UserModel, { USER_TYPES } from '../models/User.js';
 
 export default {
     onGetAllUsers: async (req, res) => { },
-    onGetUserById: async (req, res) => { },
+    onGetUserById: async (req, res) => {
+        try {
+            const user = await UserModel.getUserById(req.params.id);
+            return res.status(200).json({ success: true, user });
+        } catch (error) {
+            return res.status(500).json({ success: false, error: error })
+        }
+    },
     onCreateUser: async (req, res) => {
         try {
             const validation = makeValidation(types => ({
