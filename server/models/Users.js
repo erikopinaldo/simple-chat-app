@@ -22,4 +22,17 @@ const userSchema = new mongoose.Schema(
     }
 );
 
+userSchema.statics.createUser = async function (
+	firstName, 
+    	lastName, 
+    	type
+) {
+  try {
+    const user = await this.create({ firstName, lastName, type });
+    return user;
+  } catch (error) {
+    throw error;
+  }
+}
+
 export default mongoose.model("User", userSchema);
