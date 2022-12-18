@@ -24,8 +24,8 @@ const userSchema = new mongoose.Schema(
 
 userSchema.statics.createUser = async function (
 	firstName, 
-    	lastName, 
-    	type
+    lastName, 
+    type
 ) {
   try {
     const user = await this.create({ firstName, lastName, type });
