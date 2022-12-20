@@ -44,6 +44,18 @@ app.use('*', (req, res) => {
     })
 });
 
-let server = app.listen(process.env.PORT, () => {
-    console.log('Server is running, you better catch it!')
-}) 
+/** Create HTTP server. */
+const server = http.createServer(app);
+const io = new Server(server)
+
+/** Create socket connection */
+global.io = io.listen(server);
+global.io.on('connection', WebSockets.connection)
+
+/** Listen on provided port, on all network interfaces. */
+server.listen(port);
+
+/** Event listener for HTTP server "listening" event. */
+server.on("listening", () => {
+    console.log(`Listening on port:: http://localhost:${port}/`)
+});
