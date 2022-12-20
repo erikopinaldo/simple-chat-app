@@ -42,6 +42,6 @@ app.use('*', (req, res) => {
     })
 });
 
-app.listen(process.env.PORT, () => {
+let server = app.listen(process.env.PORT, () => {
     console.log('Server is running, you better catch it!')
 }) 
