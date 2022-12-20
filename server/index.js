@@ -5,10 +5,6 @@ import express from 'express';
 import logger from "morgan";
 import cors from "cors";
 
-// socket configuration
-import socketio from "socket.io";
-import WebSockets from "./utils/WebSockets.js";
-
 // mongo connection
 import "./config/mongo.js";
 
